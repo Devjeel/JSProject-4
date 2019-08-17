@@ -1,0 +1,20 @@
+[
+	{
+		"Product": "Pizza Hat",
+		"Price": "$28",
+		"Image": "pizza.jpg",
+		"Description": "Finally, you can indulge in everyone’s life-long desire of wearing pizza atop their head. Beware the sprinkled parmesan as you nod or shake your head, though—some might mistake it for dandruff."
+	},
+	{
+		"Product": "Cat Butt Tissue Holder",
+		"Price": "$55",
+		"Image": "catTissue.jpg",
+		"Description": "This seems like the nicest thing to be plucked from a cat’s rear since, well, ever. And who doesn’t like to be stared down with peering, inquisitive eyes each time they need to blow their nose?"
+	},
+	{
+		"Product": "Dill- Pickle Lip Balm",
+		"Price": "$11.95",
+		"Image": "lipbalm.jpg",
+		"Description": "Some people want their mouths to be minty fresh, or sweetly scented. And others just want their lips to have the distinct flavor of something that might accompany a pastrami sandwich."
+	}
+]

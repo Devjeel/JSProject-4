@@ -1,4 +1,3 @@
-<!doctype html>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -6,10 +5,16 @@
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
 <link href="main.css" rel="stylesheet">
 <script src="mapInit.js" async></script>
+<script type="text/javascript" src="data.json"></script>
+
 </head>
 
 <body>
-  <div class="container">
+  <!-- Facebook plugin -->
+    <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v4.0&appId=696854127423054&autoLogAppEvents=1"></script>
+    <div class="container">
+
     <header>
       <h1> JavaScript Project - 200395854 </h1>
     </header>
@@ -17,9 +22,13 @@
        
        <h3> Weird Deals! </h3>
       
-      
+      <!-- Section to load data -->
+      <section></section>
+
       <!--The div element for the map -->
       <div id="map"></div>
+
+      <div class="fb-comments" data-href="https://devjeel.github.io/JSProject-4/" data-width="" data-numposts="5"></div>
 
     </main>
     <footer>
@@ -27,6 +36,52 @@
     </footer>
   </div><!--end container -->
 
+<script type="text/javascript">
+  //JSON Data Loading process 
+  var section = document.querySelector("section");
+  
+    function loadData(jsonObj){ 
+
+      var loadProducts = jsonObj;
+      for (var i = 0; i < loadProducts.length; i++) {
+        var article = document.createElement('article');
+        var h4 = document.createElement('h4');
+        var img = document.createElement('img');
+        var para1 = document.createElement('p');
+        var para2 = document.createElement('p');
+        var list = document.createElement('ul');
+        img.setAttribute('src', 'images/' + loadProducts[i].image);
+        img.setAttribute('alt', loadProducts[i].product);
+        h4.textContent = loadProducts[i].product;
+        para1.textContent = 'Price: ' + loadProducts[i].price;
+        para2.textContent = 'Description: ' + loadProducts[i].description;
+        
+        article.appendChild(img);
+        article.appendChild(h4);
+        article.appendChild(para1);
+        article.appendChild(para2);
+        section.appendChild(article);
+      }
+  };
+
+//Accesing the JSON file with HTTP Request
+  function jsonRequest(){
+    var xobj = new XMLHttpRequest();
+    xobj.overrideMimeType("application/json");
+    xobj.open('GET', 'data.json', true); 
+      if (xobj.readyState == 4 && xobj.status == "200") {
+        // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+        var mydata = xobj.response;
+      }
+    xobj.send(); 
+    loadData(mydata);
+  };
+
+jsonRequest();
+
+
+</script>
+<!-- Google Map API-->
 <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC94Mcog8SMX0cvYWBt5Ne4POgQV7sYmXY
 &callback=initMap">
