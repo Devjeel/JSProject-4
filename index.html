@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> JavaScript Project - 200395854 </title>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<link href="main.css" rel="stylesheet">
+<script src="validation.js" async></script>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1> JavaScript Project - 200395854 </h1>
+    </header>
+    <main>
+       <form action="json.html" method="post" class="" novalidate>
+          <fieldset class="form-group">
+             <input type="text" name="firstname" class="form-control" placeholder="Please enter your first name" id="fName" required pattern="[A-Za-z]+">
+             <input type="text" name="lastname" class="form-control" placeholder="Please enter your last name" id="lName" required pattern="[A-Za-z]+">
+               <input type="text" name="age" class="form-control" placeholder="Please enter your age" id="age" pattern="[0-9]{1,2}" required>
+             <input type="text" name="city" class="form-control" placeholder="Please enter your location" id="city" required>
+             <input type="email" name="email" class="form-control" placeholder="Please enter your email" id="email" required>
+           </br>
+             <span class="error" aria-live="polite"></span>
+          </fieldset>
+          
+          <input type="submit" value="submit form" name="submit" class="btn btn-danger">
+       </form>
+
+    </main>
+    <footer>
+      <p> &copy; 2019 COMP1073 --Jeel Patel</p>
+    </footer>
+  </div><!--end container -->
+  </body>
+</html>
